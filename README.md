@@ -13,9 +13,9 @@ This file can a be a single source of reference across.
 Applicable References :
 
 
-|Analytic Rule|Hunting Query|Logic App|Workbook|
+|Analytic Rule|Hunting Query|Workbook|
 |-------------|-------------|---------|--------|
-|Azure Portal Signin from another Azure Tenant|Hunting Query|Logic App|Workbook|
+|Azure Portal Signin from another Azure Tenant|Sign-Ins from Azure External Tenant|Can be good use case for SignIn Activities|
 
 
 
