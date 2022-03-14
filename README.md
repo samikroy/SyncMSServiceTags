@@ -14,7 +14,7 @@ Applicable References :
 
 
 |Analytic Rule|Hunting Query|Workbook|
-|-------------|-------------|---------|--------|
+|-------------|-------------|---------|
 |Azure Portal Signin from another Azure Tenant|Sign-Ins from Azure External Tenant|Can be good use case for SignIn Activities|
 
 
