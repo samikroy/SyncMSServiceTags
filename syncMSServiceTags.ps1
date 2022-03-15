@@ -5,6 +5,7 @@ $DownloadURL = [System.Uri]$DownloadLink[0].href
 $jsonFileData = Invoke-WebRequest -Method Get -URI $DownloadURL | ConvertFrom-Json
 $jsonContent = $jsonFileData | ConvertTo-Json -depth 100
 $jsonFileData | ConvertTo-Json -depth 100 | Out-File ".\servicetags.json"
+write-host "File Fetch completed."
 
 #decleration
 $file = ".\servicetags.json"
@@ -16,22 +17,22 @@ git config --global user.email "builduser@samik.local" # any values will do, if 
 git config --global user.name "Build user"
 
 "Select a branch"
-git checkout main 2>&1 | write-host # need the stderr redirect as some git command line send none error output here
+git checkout main | write-host # need the stderr redirect as some git command line send none error output here
 
 "Update the local repo"
-git pull  2>&1 | write-host
+git pull | write-host
 
 "Status at start"
-git status 2>&1 | write-host
+git status | write-host
 
 "Update the file $file"
 Add-Content -Path $file -Value $jsonContent
 
 "Status prior to stage"
-git status 2>&1 | write-host
+git status | write-host
 
 "Stage the file"
-git add $file  2>&1 | write-host
+git add $file | write-host
 
 "Status prior to commit"
 git status 2>&1 | write-host
