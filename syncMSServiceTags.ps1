@@ -32,17 +32,17 @@ Add-Content -Path $file -Value $jsonContent
 git status | write-host
 
 "Stage the file"
-git add $file | write-host
+git commit -a $file | write-host
 
 "Status prior to commit"
-git status 2>&1 | write-host
+git status | write-host
 
 "Commit the file"
 git commit -m "Automated Repo Update $wi"  2>&1 | write-host
 
 "Status prior to push"
-git status 2>&1 | write-host
+git status | write-host
 
 "Push the change"
-git push  2>&1 | write-host
+git push  | write-host
 #adding comment to run the build.
