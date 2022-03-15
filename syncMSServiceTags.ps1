@@ -26,7 +26,7 @@ git pull  2>&1 | write-host
 git status 2>&1 | write-host
 
 "Update the file $file"
-Add-Content -Path $file -Value "$text - $(Get-Date)"
+Add-Content -Path $file
 
 "Status prior to stage"
 git status 2>&1 | write-host
