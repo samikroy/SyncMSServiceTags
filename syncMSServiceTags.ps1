@@ -17,32 +17,31 @@ git config --global user.email "builduser@samik.local" # any values will do, if 
 git config --global user.name "Build user"
 
 "Select a branch"
-git checkout main | write-host # need the stderr redirect as some git command line send none error output here
+git checkout master 2>&1 | write-host # need the stderr redirect as some git command line send none error output here
 
 "Update the local repo"
-git pull | write-host
+git pull  2>&1 | write-host
 
 "Status at start"
-git status | write-host
+git status 2>&1 | write-host
 
 "Update the file $file"
-Add-Content -Path $file -Value $jsonContent
+Add-Content -Path $file -Value "$text - $(Get-Date)"
 
 "Status prior to stage"
-git status | write-host
+git status 2>&1 | write-host
 
 "Stage the file"
-git commit -a $file | write-host
+git add $file  2>&1 | write-host
 
 "Status prior to commit"
-git status | write-host
+git status 2>&1 | write-host
 
 "Commit the file"
 git commit -m "Automated Repo Update $wi"  2>&1 | write-host
 
 "Status prior to push"
-git status | write-host
+git status 2>&1 | write-host
 
 "Push the change"
-git push  | write-host
-#adding comment to run the build.
+git push  2>&1 | write-host
