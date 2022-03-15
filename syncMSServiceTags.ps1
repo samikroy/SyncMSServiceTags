@@ -44,3 +44,4 @@ git status 2>&1 | write-host
 
 "Push the change"
 git push  2>&1 | write-host
+#adding comment to run the build.
